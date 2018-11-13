@@ -1034,7 +1034,7 @@ function testMapSpecialModController() {
 					c.selectedIndex -= 1;
 				var d = updateMapCost(!0),
 				e = game.resources.fragments.owned;
-				"0" != c.value && console.log("Set the map special modifier to: " + mapSpecialModifierConfig[c.value].name + ". Cost: " + (100 * (d / e)).toFixed(2) + "% of your fragments.")
+				"0" != c.value && debug("Set the map special modifier to: " + mapSpecialModifierConfig[c.value].name + ". Cost: " + (100 * (d / e)).toFixed(2) + "% of your fragments.")
 			}
 			var g = getSpecialModifierSetting(),
 			h = 109 <= game.global.highestLevelCleared,
