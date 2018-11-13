@@ -1017,16 +1017,19 @@ function testMapSpecialModController() {
 	var a = [];
 	if (Object.keys(mapSpecialModifierConfig).forEach(function (o) {
 			var p = mapSpecialModifierConfig[o];
-			game.global.highestLevelCleared + 1 >= p.unlocksAt && a.push(p.name);
-			console.log("mapSpecialModifierConfig[o]: " + p.name)
+			game.global.highestLevelCleared + 1 >= p.unlocksAt && a.push(p.abv.toLower());
 		}), !(1 > a.length)) {
-		var b = a.length,
-		c = document.getElementById("advSpecialSelect");
+		var c = document.getElementById("advSpecialSelect");
 		if (c) {
 			if (59 <= game.global.highestLevelCleared) {
-				if (needPrestige && (b = 6), c.selectedIndex = b, 0 == c.selectedIndex)
-					return;
-				if (!needPrestige && game.talents.hyperspeed2.purchased && game.global.world > Math.floor(0.5 * (game.global.highestLevelCleared + 1)) ? c.selectedIndex = 1 : needPrestige && (c.selectedIndex = 0), "fa" != game.global.mapExtraBonus && 1 == c.selectedIndex);
+				if (needPrestige && a.includes("p")) { // Prestiging, so use Prestigious
+					c.value = "p";
+				}
+				else if (shouldFarm) { // Need better equipment, pick the best modifier for metals (in descdending order: "Large Metal Cache", "Huge Cache", "Small Metal Cache", "Large Cache")
+					c.value = a.includes("lmc") ? "lmc" : a.includes("hc") ? "hc" : a.includes("smc") ? "smc" : "lc";
+				}
+				else c.value = "fa"; // Just farming for map stacks, so use Fast Attacks
+				// Only use a modifier we can actually afford
 				for (var d = updateMapCost(!0), e = game.resources.fragments.owned, f = 100 * (d / e); 0 < c.selectedIndex && d > e; )
 					c.selectedIndex -= 1;
 				var d = updateMapCost(!0),
