@@ -43,7 +43,7 @@ took a break
 
 ***Your only Option***: Install TamperMonkey (Chrome) or GreaseMonkey (Firefox)
 
-**EASY INSTALL click here: https://github.com/Zorn192/AutoTrimps/raw/gh-pages/.user.js** (the Monkeys will detect this and prompt you to install it)
+**EASY INSTALL click here: https://github.com/Timeslice42/AutoTrimps/raw/gh-pages/.user.js** (the Monkeys will detect this and prompt you to install it)
 
 Overly detailed Chrome/TamperMonkey Instructions:
 - Open the TamperMonkey dashboard and go to utilities – in the URL box paste https://github.com/Zorn192/AutoTrimps/raw/gh-pages/.user.js and click IMPORT
