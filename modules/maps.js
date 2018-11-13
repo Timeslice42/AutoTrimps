@@ -1017,7 +1017,7 @@ function testMapSpecialModController() {
 	var a = [];
 	if (Object.keys(mapSpecialModifierConfig).forEach(function (o) {
 			var p = mapSpecialModifierConfig[o];
-			game.global.highestLevelCleared + 1 >= p.unlocksAt && a.push(p.abv.toLower());
+			game.global.highestLevelCleared + 1 >= p.unlocksAt && a.push(p.abv.toLowerCase());
 		}), !(1 > a.length)) {
 		var c = document.getElementById("advSpecialSelect");
 		if (c) {
