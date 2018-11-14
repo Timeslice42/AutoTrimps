@@ -811,6 +811,7 @@ function autoMap() {
 			break;
 		}
 	}
+	cosole.log("Zone: " + game.global.world + " needToVoid: " + needToVoid + " doVoids: " + doVoids);
 	if (shouldDoMaps || doVoids || needPrestige) {
 		if (selectedMap == "world") {
 			if (preSpireFarming) {
@@ -1031,7 +1032,10 @@ function testMapSpecialModController() {
 				else c.value = "fa"; // Just farming for map stacks, so use Fast Attacks
 				// Only use a modifier we can actually afford
 				for (var d = updateMapCost(!0), e = game.resources.fragments.owned, f = 100 * (d / e); 0 < c.selectedIndex && d > e; )
+				{
 					c.selectedIndex -= 1;
+					console.log("Could not afford " + mapSpecialModifierConfig[c.value].name);
+				}
 				var d = updateMapCost(!0),
 				e = game.resources.fragments.owned;
 				"0" != c.value && debug("Set the map special modifier to: " + mapSpecialModifierConfig[c.value].name + ". Cost: " + (100 * (d / e)).toFixed(2) + "% of your fragments.")
