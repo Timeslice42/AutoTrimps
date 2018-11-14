@@ -811,7 +811,7 @@ function autoMap() {
 			break;
 		}
 	}
-	cosole.log("Zone: " + game.global.world + " needToVoid: " + needToVoid + " doVoids: " + doVoids);
+	console.log("Zone: " + game.global.world + " needToVoid: " + needToVoid + " doVoids: " + doVoids);
 	if (shouldDoMaps || doVoids || needPrestige) {
 		if (selectedMap == "world") {
 			if (preSpireFarming) {
